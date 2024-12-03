@@ -1,0 +1,64 @@
+# Ignorar arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar pastas de ambiente de desenvolvimento
+.idea/
+.vscode/
+*.iml
+
+# Ignorar logs
+*.log
+logs/
+
+# Ignorar configurações locais do Maven
+.mvn/
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Ignorar configurações específicas do IntelliJ IDEA
+*.iws
+*.ipr
+*.iml
+out/
+
+# Ignorar arquivos de build
+*.class
+build/
+bin/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Ignorar arquivos do Spring Boot
+.env
+*.h2.db
+*.mv.db
+*.trace.db
+
+# Ignorar arquivos sensíveis
+application.properties
+application.yml
+application-dev.properties
+application-test.properties
+
+# Ignorar arquivos gerados pelo sistema operacional
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Ignorar credenciais específicas
+*.key
+*.pem
+
+# Ignorar dependências temporárias
+node_modules/
+dist/
+
+# Ignorar backups
+*.bak
+*.old
+*.swp
