@@ -1,0 +1,25 @@
+CREATE TABLE usuarios (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    role VARCHAR(50) NOT NULL DEFAULT 'USER'
+);
+
+CREATE TABLE cursos (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    categoria VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE topicos (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    mensagem TEXT NOT NULL,
+    data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    estado ENUM('ABERTO', 'FECHADO') DEFAULT 'ABERTO',
+    autor_id BIGINT NOT NULL,
+    curso_id BIGINT NOT NULL,
+    CONSTRAINT fk_autor FOREIGN KEY (autor_id) REFERENCES usuarios(id),
+    CONSTRAINT fk_curso FOREIGN KEY (curso_id) REFERENCES cursos(id)
+);
